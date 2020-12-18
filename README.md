@@ -12,10 +12,10 @@
 ### Fields
 
 - [ ] Request name: required short text
-    - [x] no more than 255 characters
+    - [ ] no more than 255 characters
 - [ ] Requestor: required
     - [ ] person picker (search on each keystroke within people.json, match any field, include partials, show first 5 results unsorted)
-- [x] Good ending: required radio Yes/Depends/No
+- [ ] Good ending: required radio Yes/Depends/No
 - [ ] Description: required long text, no limit, minimum 250 characters; description under the field: “No spoilers please”
 - [ ] Need storyteller: checkbox, required
 - [ ] Storyteller: required & visible when Need storyteller equals true
