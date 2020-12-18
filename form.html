@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+
+<body>
+    <form action="" method="get">
+        <div>
+            <label for="req-name">Request name</label>
+        </div>
+        <div>
+            <input type="text" name="req-name" id="req-name" maxlength="255" required>
+        </div>
+        <div>
+            <label for="requestor">Requestor</label>
+        </div>
+        <div>
+            <!-- TODO: person picker (search on each keystroke within people.json, match any field, include partials, show first 5 results unsorted)-->
+            <input type="text" name="requestor" id="requestor" required>
+        </div>
+        <div>
+            <label for="good-ending">Good ending</label>
+        </div>
+        <div>
+            <input type="radio" name="good-ending" id="good-ending-yes" required>
+            <label for="good-ending-yes">Yes</label>
+            <input type="radio" name="good-ending" id="good-ending-depends" checked>
+            <label for="good-ending-depends">Depends</label>
+            <input type="radio" name="good-ending" id="good-ending-no">
+            <label for="good-ending-no">No</label>
+        </div>
+        <div>
+            <input type="checkbox" name="need-storyteller" id="need-storyteller" required>
+            <label for="need-storyteller">Need storyteller</label>
+        </div>
+        <div>
+            <label for="storyteller">Storyteller</label>
+        </div>
+        <div>
+            <!-- TODO: field required & visible when Need storyteller equals true -->
+            <input type="text" name="storyteller" id="storyteller" required>
+        </div>
+        <div>
+            <label for="wntd-chars">Wanted characters</label>
+        </div>
+        <div>
+            <select name="wntd-chars" id="wntd-chars" size="10" multiple>
+                <option name="Lorem">Lorem</option>
+                <option name="ipsum">ipsum</option>
+                <option name="dolor">dolor</option>
+                <option name="sit">sit</option>
+                <option name="amet">amet</option>
+                <option name="consectetur">consectetur</option>
+                <option name="adipisicing">adipisicing</option>
+                <option name="elit">elit</option>
+                <option name="Sed">Sed</option>
+                <option name="do">do</option>
+                <option name="eiusmod">eiusmod</option>
+                <option name="tempor">tempor</option>
+                <option name="incididunt">incididunt</option>
+                <option name="ut">ut</option>
+                <option name="labore">labore</option>
+                <option name="et">et</option>
+                <option name="dolore">dolore</option>
+                <option name="magna">magna</option>
+                <option name="aliqua">aliqua</option>
+                <option name="Ut">Ut</option>
+                <option name="enim">enim</option>
+                <option name="ad">ad</option>
+                <option name="minim">minim</option>
+                <option name="veniam">veniam</option>
+                <option name="quis">quis</option>
+                <option name="nostrud">nostrud</option>
+                <option name="exercitation">exercitation</option>
+                <option name="ullamco">ullamco</option>
+                <option name="laboris">laboris</option>
+                <option name="nisi">nisi</option>
+                <option name="ut">ut</option>
+                <option name="aliquip">aliquip</option>
+                <option name="ex">ex</option>
+                <option name="ea">ea</option>
+                <option name="commodo">commodo</option>
+                <option name="consequat">consequat</option>
+                <option name="Duis">Duis</option>
+                <option name="aute">aute</option>
+                <option name="irure">irure</option>
+                <option name="dolor">dolor</option>
+                <option name="in">in</option>
+                <option name="reprehenderit">reprehenderit</option>
+                <option name="in">in</option>
+                <option name="voluptate">voluptate</option>
+                <option name="velit">velit</option>
+                <option name="esse">esse</option>
+                <option name="cillum">cillum</option>
+                <option name="dolore">dolore</option>
+                <option name="eu">eu</option>
+                <option name="fugiat">fugiat</option>
+                <option name="nulla">nulla</option>
+                <option name="pariatur">pariatur</option>
+                <option name="Excepteur">Excepteur</option>
+                <option name="sint">sint</option>
+                <option name="occaecat">occaecat</option>
+                <option name="cupidatat">cupidatat</option>
+                <option name="non">non</option>
+                <option name="proident">proident</option>
+                <option name="sunt">sunt</option>
+                <option name="in">in</option>
+                <option name="culpa">culpa</option>
+                <option name="qui">qui</option>
+                <option name="officia">officia</option>
+                <option name="deserunt">deserunt</option>
+                <option name="mollit">mollit</option>
+                <option name="anim">anim</option>
+                <option name="id">id</option>
+                <option name="est">est</option>
+                <option name="laborum">laborum</option>
+                <option name="Sed">Sed</option>
+                <option name="ut">ut</option>
+                <option name="perspiciatis">perspiciatis</option>
+                <option name="unde">unde</option>
+                <option name="omnis">omnis</option>
+                <option name="iste">iste</option>
+                <option name="natus">natus</option>
+                <option name="error">error</option>
+                <option name="sit">sit</option>
+                <option name="voluptatem">voluptatem</option>
+                <option name="accusantium">accusantium</option>
+                <option name="doloremque">doloremque</option>
+                <option name="laudantium">laudantium</option>
+                <option name="totam">totam</option>
+                <option name="rem">rem</option>
+                <option name="aperiam">aperiam</option>
+                <option name="eaque">eaque</option>
+                <option name="ipsa">ipsa</option>
+                <option name="quae">quae</option>
+                <option name="ab">ab</option>
+                <option name="illo">illo</option>
+                <option name="inventore">inventore</option>
+                <option name="veritatis">veritatis</option>
+                <option name="et">et</option>
+                <option name="quasi">quasi</option>
+                <option name="architecto">architecto</option>
+                <option name="beatae">beatae</option>
+                <option name="vitae">vitae</option>
+                <option name="dicta">dicta</option>
+                <option name="del">del</option>
+                <option name="veritas">veritas</option>
+            </select>
+        </div>
+        <div>
+            <label for="deadline">Deadline</label>
+        </div>
+        <div>
+            <input type="date" name="deadline" id="deadline">
+        </div>
+    </form>
+</body>
+
+</html>
