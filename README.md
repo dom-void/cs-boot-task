@@ -11,14 +11,17 @@
 
 ### Fields
 
-- [ ] Request name: required short text (no more than 255 characters)
-- [ ] Requestor: required, person picker (search on each keystroke within people.json, match any field, include partials, show first 5 results unsorted)
-- [ ] Good ending: required radio Yes/Depends/No
+- [ ] Request name: required short text
+    - [x] no more than 255 characters
+- [ ] Requestor: required
+    - [ ] person picker (search on each keystroke within people.json, match any field, include partials, show first 5 results unsorted)
+- [x] Good ending: required radio Yes/Depends/No
 - [ ] Description: required long text, no limit, minimum 250 characters; description under the field: “No spoilers please”
 - [ ] Need storyteller: checkbox, required
 - [ ] Storyteller: required & visible when Need storyteller equals true
 - [ ] Wanted characters: multiple choice, optional, use 100 random short strings as options
-- [ ] Deadline: optional datepicker, enforce minimum a week ahead (according to utc current time), set 4 weeks ahead by default, no later than current year end,
+- [ ] Deadline: optional datepicker
+    - [ ] enforce minimum a week ahead (according to utc current time), set 4 weeks ahead by default, no later than current year end,
 - [ ] Budget: required, number, minimum 250000 description: In Fable Dollars (FBD), no less than 250000
 - [ ] Status: hidden, disabled)
 
