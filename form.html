@@ -9,12 +9,10 @@
 </head>
 
 <body>
-    <form action="" method="get">
-        <div>
-            <label for="req-name">Request name</label>
-        </div>
-        <div>
-            <input type="text" name="req-name" id="req-name" maxlength="255" required>
+    <form action="" method="post" onsubmit="return validate(this)">
+        <div id="reqnameArea">
+            <label for="reqname">Request name</label><br>
+            <input type="text" name="reqname" id="reqname" maxlength="255" required>
         </div>
         <div>
             <label for="requestor">Requestor</label>
@@ -24,19 +22,24 @@
             <input type="text" name="requestor" id="requestor" required>
         </div>
         <div>
-            <label for="good-ending">Good ending</label>
+            <label for="goodending">Good ending</label>
         </div>
         <div>
-            <input type="radio" name="good-ending" id="good-ending-yes" required>
-            <label for="good-ending-yes">Yes</label>
-            <input type="radio" name="good-ending" id="good-ending-depends" checked>
-            <label for="good-ending-depends">Depends</label>
-            <input type="radio" name="good-ending" id="good-ending-no">
-            <label for="good-ending-no">No</label>
+            <input type="radio" name="goodending" id="goodendingy" required>
+            <label for="goodendingy">Yes</label>
+            <input type="radio" name="goodending" id="goodendingdep" checked>
+            <label for="goodendingdep">Depends</label>
+            <input type="radio" name="goodending" id="goodendingn">
+            <label for="goodendingn">No</label>
+        </div>
+        <div id="descriptionArea">
+            <label for="description">Description</label><br>
+            <textarea name="description" id="description" cols="30" rows="10"></textarea>
+            <p>No spoilers please</p>
         </div>
         <div>
-            <input type="checkbox" name="need-storyteller" id="need-storyteller" required>
-            <label for="need-storyteller">Need storyteller</label>
+            <input type="checkbox" name="needstoryteller" id="needstoryteller" required>
+            <label for="needstoryteller">Need storyteller</label>
         </div>
         <div>
             <label for="storyteller">Storyteller</label>
@@ -46,11 +49,11 @@
             <input type="text" name="storyteller" id="storyteller" required>
         </div>
         <div>
-            <label for="wntd-chars">Wanted characters</label>
+            <label for="wantedcharacters">Wanted characters</label>
         </div>
         <div>
-            <select name="wntd-chars" id="wntd-chars" size="10" multiple>
-                <option name="Lorem">Lorem</option>
+            <select name="wantedcharacters" id="wantedcharacters" size="5" multiple>
+                <option name="lorem">Lorem</option>
                 <option name="ipsum">ipsum</option>
                 <option name="dolor">dolor</option>
                 <option name="sit">sit</option>
@@ -86,7 +89,7 @@
                 <option name="ea">ea</option>
                 <option name="commodo">commodo</option>
                 <option name="consequat">consequat</option>
-                <option name="Duis">Duis</option>
+                <option name="duis">Duis</option>
                 <option name="aute">aute</option>
                 <option name="irure">irure</option>
                 <option name="dolor">dolor</option>
@@ -102,7 +105,7 @@
                 <option name="fugiat">fugiat</option>
                 <option name="nulla">nulla</option>
                 <option name="pariatur">pariatur</option>
-                <option name="Excepteur">Excepteur</option>
+                <option name="excepteur">Excepteur</option>
                 <option name="sint">sint</option>
                 <option name="occaecat">occaecat</option>
                 <option name="cupidatat">cupidatat</option>
@@ -119,7 +122,7 @@
                 <option name="id">id</option>
                 <option name="est">est</option>
                 <option name="laborum">laborum</option>
-                <option name="Sed">Sed</option>
+                <option name="sed">Sed</option>
                 <option name="ut">ut</option>
                 <option name="perspiciatis">perspiciatis</option>
                 <option name="unde">unde</option>
@@ -159,11 +162,9 @@
             <!-- TODO: JS: enforce minimum a week ahead (according to utc current time), set 4 weeks ahead by default, no later than current year end -->
             <input type="date" name="deadline" id="deadline">
         </div>
-        <div>
-            <label for="budget">Budget</label>
-        </div>
-        <div>
-            <input type="number" name="budget" id="budget" min="250000">
+        <div id="budgetArea">
+            <label for="budget">Budget</label><br>
+            <input type="number" name="budget" id="budget">
             <!-- TODO: JS: description (on focus?) -->
             <p>In Flable Dollars (FBD), no less than 250000</p>
         </div>
