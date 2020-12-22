@@ -3,6 +3,27 @@ const urlParams = new URLSearchParams(getParams);
 
 let reqID = null;
 let userID = null;
+//TODO: reading activeUser from cookies
+let activeUser = null;
+let isOwner = false;
+
+let currentDate = Date.now();
+let today = new Date(currentDate);
+let todayY = today.getFullYear();
+let todayM = today.getMonth()+1;
+let todayD = today.getDate();
+let nextWeek = new Date(currentDate + 7 * 24 * 60 * 60 * 1000);
+let nextWeekY = nextWeek.getFullYear();
+let nextWeekM = nextWeek.getMonth()+1;
+let nextWeekD = nextWeek.getDate();
+let fourWeeksAhead = new Date(currentDate + 28 * 24 * 60 * 60 * 1000);
+let fourWeeksAheadY = fourWeeksAhead.getFullYear();
+let fourWeeksAheadM = fourWeeksAhead.getMonth()+1;
+let fourWeeksAheadD = fourWeeksAhead.getDate();
+
+console.log('today is:', todayY+'-'+todayM+'-'+todayD);
+console.log('next week is:', nextWeekY+'-'+nextWeekM+'-'+nextWeekD);
+console.log('four weeks ahead is:', fourWeeksAheadY+'-'+fourWeeksAheadM+'-'+fourWeeksAheadD);
 
 if (urlParams.has('id')) {
     reqID = urlParams.get('id');
@@ -20,6 +41,16 @@ console.log(document.getElementById('reqname'))
 //TODO: if userID is owner, anable all the fields (change styling)
 
 // const apiURL = "http://localhost:3000/"
+
+function weeksAhead(n) {
+
+}
+
+function renderPageContent () {
+
+    console.log('renderPageContent() works')
+
+}
 
 function validate(form) {
 
