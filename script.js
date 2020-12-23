@@ -7,28 +7,6 @@ let userID = null;
 let activeUser = null;
 let isOwner = false;
 
-let currentDate = Date.now();
-let today = new Date(currentDate);
-let todayY = today.getFullYear();
-let todayM = today.getMonth()+1;
-let todayD = today.getDate();
-let nextWeek = new Date(currentDate + 7 * 24 * 60 * 60 * 1000);
-let nextWeekY = nextWeek.getFullYear();
-let nextWeekM = nextWeek.getMonth()+1;
-let nextWeekD = nextWeek.getDate();
-let fourWeeksAhead = new Date(currentDate + 28 * 24 * 60 * 60 * 1000);
-let fourWeeksAheadY = fourWeeksAhead.getFullYear();
-let fourWeeksAheadM = fourWeeksAhead.getMonth()+1;
-let fourWeeksAheadD = fourWeeksAhead.getDate();
-let minDeadline = nextWeekY+'-'+nextWeekM+'-'+nextWeekD;
-let defDeadline = fourWeeksAheadY+'-'+fourWeeksAheadM+'-'+fourWeeksAheadD;
-let maxDeadline = todayY+'-12-31';
-
-//FIXME: delete logs
-console.log('today is:', todayY+'-'+todayM+'-'+todayD);
-console.log('next week is:', minDeadline);
-console.log('four weeks ahead is:', defDeadline);
-
 if (urlParams.has('id')) {
     reqID = urlParams.get('id');
 }
@@ -37,8 +15,8 @@ if (urlParams.has('user')) {
     userID = urlParams.get('user');
 }
 
-//FIXME: delete log
-console.log('id:', reqID+';', 'user:', userID);
+//FIXME: cleaning – delete log below
+console.log('id:', reqID + ';', 'user:', userID);
 
 //TODO: get data for reqID from json, disable all fields (change styling), fill all the fields with data
 //TODO: if userID is owner, anable all the fields (change styling)
@@ -48,12 +26,36 @@ console.log('id:', reqID+';', 'user:', userID);
 displayFormContent();
 
 function displayFormContent() {
+
+    // setting dates for min, default and max in deadline field:
+    let currentDate = Date.now();
+    let today = new Date(currentDate);
+    let todayY = today.getFullYear();
+    let todayM = today.getMonth() + 1;
+    let todayD = today.getDate();
+    let nextWeek = new Date(currentDate + 7 * 24 * 60 * 60 * 1000);
+    let nextWeekY = nextWeek.getFullYear();
+    let nextWeekM = nextWeek.getMonth() + 1;
+    let nextWeekD = nextWeek.getDate();
+    let fourWeeksAhead = new Date(currentDate + 28 * 24 * 60 * 60 * 1000);
+    let fourWeeksAheadY = fourWeeksAhead.getFullYear();
+    let fourWeeksAheadM = fourWeeksAhead.getMonth() + 1;
+    let fourWeeksAheadD = fourWeeksAhead.getDate();
+    let minDeadline = nextWeekY + '-' + nextWeekM + '-' + nextWeekD;
+    let defDeadline = fourWeeksAheadY + '-' + fourWeeksAheadM + '-' + fourWeeksAheadD;
+    let maxDeadline = todayY + '-12-31';
+
+    //FIXME: cleaning – delete logs
+    console.log('today is:', todayY + '-' + todayM + '-' + todayD);
+    console.log('next week is:', minDeadline);
+    console.log('four weeks ahead is:', defDeadline);
+
     if (reqID) {
         if (userID != activeUser) {
-            //TODO: disabling form fields
+            //TODO: disabling form fields when user is not owner
             console.log('disabling form fields');
         }
-        //TODO: writing values to the form fields
+        //TODO: writing values to the form fields 
         console.log('writing values to the form fields');
     } else {
         if (nextWeekY != todayY) {
@@ -79,18 +81,18 @@ function validate(form) {
 
     let isOK = true;
 
-    if(form.reqname.value.length >= 255) {
+    if (form.reqname.value.length >= 255) {
         document.getElementById('reqnameArea').appendChild(document.createElement('p')).outerHTML = '<p style="color:red;">Cannot be longer than 255 characters</p>';
         isOK = false;
     }
 
-    if(form.description.value.length <= 250) {
+    if (form.description.value.length <= 250) {
         let charactersLeft = 250 - form.description.value.length;
-        document.getElementById('descriptionArea').appendChild(document.createElement('p')).outerHTML = '<p style="color:red;">More than 255 characters is a must! There is still '+charactersLeft+' characters to add.</p>';
+        document.getElementById('descriptionArea').appendChild(document.createElement('p')).outerHTML = '<p style="color:red;">More than 255 characters is a must! There is still ' + charactersLeft + ' characters to add.</p>';
         isOK = false;
     }
 
-    if(form.budget.value <= 250000) {
+    if (form.budget.value <= 250000) {
         document.getElementById('budgetArea').appendChild(document.createElement('p')).outerHTML = '<p style="color:red;">Minimum amount of budget is 250 000 FBD</p>';
         isOK = false;
     }
