@@ -5,7 +5,7 @@
 ## Form page
 
 - [ ] Entry at form.html
-- [ ] accept request ID via url parameter,
+- [x] accept request ID via url parameter,
 - [ ] id provided should load existing request but disable the form unless the current user (fake ask api query) has role Owner
 - [ ] no id should mean new item
 
@@ -20,10 +20,10 @@
 - [ ] Need storyteller: checkbox, required
 - [ ] Storyteller: required & visible when Need storyteller equals true
 - [x] Wanted characters: multiple choice, optional, use 100 random short strings as options
-- [ ] Deadline: optional datepicker
-    - [ ] enforce minimum a week ahead (according to utc current time), set 4 weeks ahead by default, no later than current year end,
+- [x] Deadline: optional datepicker
+    - [x] enforce minimum a week ahead (according to utc current time), set 4 weeks ahead by default, no later than current year end,
 - [x] Budget: required, number, minimum 250000 description: In Fable Dollars (FBD), no less than 250000
-- [ ] Status: hidden, disabled)
+- [x] Status: hidden, disabled)
 
 ### Buttons
 
