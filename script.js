@@ -70,6 +70,22 @@ function displayFormContent() {
     }
 }
 
+function storytellerIsNeeded() {
+    needStoryteller = document.getElementById('needstoryteller');
+    storytellerArea = document.getElementById('storytellerArea');
+    storyteller = document.getElementById('storyteller');
+    storytellerErrorInfo = document.getElementById('storytellererror');
+
+    if (needStoryteller.checked) {
+        if (storytellerErrorInfo) {
+            storytellerErrorInfo.remove();
+        }
+        storytellerArea.className = 'show';
+    } else {
+        storytellerArea.className = 'hide';
+    }
+}
+
 function renderDeadline(min, def, max) {
     let field = document.getElementById('deadline')
     field.setAttribute('min', min);
@@ -81,19 +97,60 @@ function validate(form) {
 
     let isOK = true;
 
+    if (!form.reqname.value) {
+        errorInfo = document.getElementById('reqnameerror');
+        if(errorInfo) {
+            errorInfo.remove();
+        }
+        document.getElementById('reqnameArea').appendChild(document.createElement('p')).outerHTML = '<p id="reqnameerror" style="color:red;">Please add a name for the request</p>';
+        isOK = false;
+    }
+
     if (form.reqname.value.length >= 255) {
-        document.getElementById('reqnameArea').appendChild(document.createElement('p')).outerHTML = '<p style="color:red;">Cannot be longer than 255 characters</p>';
+        errorInfo = document.getElementById('reqnameerror');
+        if(errorInfo) {
+            errorInfo.remove();
+        }
+        document.getElementById('reqnameArea').appendChild(document.createElement('p')).outerHTML = '<p id="reqnameerror" style="color:red;">Cannot be longer than 255 characters</p>';
+        isOK = false;
+    }
+
+    if (!form.requestor.value) {
+        errorInfo = document.getElementById('requestorerror');
+        if(errorInfo) {
+            errorInfo.remove();
+        }
+        document.getElementById('requestorArea').appendChild(document.createElement('p')).outerHTML = '<p id="requestorerror" style="color:red;">Please choose a requestor</p>'
         isOK = false;
     }
 
     if (form.description.value.length <= 250) {
+        errorInfo = document.getElementById('descriptionerror');
+        if(errorInfo) {
+            errorInfo.remove();
+        }
         let charactersLeft = 250 - form.description.value.length;
-        document.getElementById('descriptionArea').appendChild(document.createElement('p')).outerHTML = '<p style="color:red;">More than 255 characters is a must! There is still ' + charactersLeft + ' characters to add.</p>';
+        document.getElementById('descriptionArea').appendChild(document.createElement('p')).outerHTML = '<p id="descriptionerror" style="color:red;">More than 255 characters is a must! There is still ' + charactersLeft + ' characters to add.</p>';
+        isOK = false;
+    }
+
+    let storytellerVisible = document.getElementById('storytellerArea');
+
+    if (storytellerVisible.className == 'show' && !form.storyteller.value) {
+        errorInfo = document.getElementById('storytellererror');
+        if(errorInfo) {
+            errorInfo.remove();
+        }
+        document.getElementById('storytellerArea').appendChild(document.createElement('p')).outerHTML = '<p id="storytellererror" style="color:red;">Please choose your storyteller</p>';
         isOK = false;
     }
 
     if (form.budget.value <= 250000) {
-        document.getElementById('budgetArea').appendChild(document.createElement('p')).outerHTML = '<p style="color:red;">Minimum amount of budget is 250 000 FBD</p>';
+        errorInfo = document.getElementById('budgeterror');
+        if(errorInfo) {
+            errorInfo.remove();
+        }
+        document.getElementById('budgetArea').appendChild(document.createElement('p')).outerHTML = '<p id="budgeterror" style="color:red;">Minimum amount of budget is 250 000 FBD</p>';
         isOK = false;
     }
 

@@ -13,12 +13,12 @@
 
 - [x] Request name: required short text
     - [x] no more than 255 characters
-- [ ] Requestor: required
+- [x] Requestor: required
     - [ ] person picker (search on each keystroke within people.json, match any field, include partials, show first 5 results unsorted)
 - [x] Good ending: required radio Yes/Depends/No
 - [x] Description: required long text, no limit, minimum 250 characters; description under the field: “No spoilers please”
-- [ ] Need storyteller: checkbox, required
-- [ ] Storyteller: required & visible when Need storyteller equals true
+- [x] Need storyteller: checkbox, required <span style="color:orange;">(I made the field not required – it makes no sense to give a user a choice and require an affirmative answer)</span>
+- [x] Storyteller: required & visible when Need storyteller equals true
 - [x] Wanted characters: multiple choice, optional, use 100 random short strings as options
 - [x] Deadline: optional datepicker
     - [x] enforce minimum a week ahead (according to utc current time), set 4 weeks ahead by default, no later than current year end,

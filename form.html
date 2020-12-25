@@ -12,14 +12,12 @@
     <form action="" method="post" onsubmit="return validate(this)">
         <div id="reqnameArea">
             <label for="reqname">Request name</label><br>
-            <input type="text" name="reqname" id="reqname" maxlength="255" required>
+            <input type="text" name="reqname" id="reqname" maxlength="255">
         </div>
-        <div>
-            <label for="requestor">Requestor</label>
-        </div>
-        <div>
+        <div id="requestorArea">
+            <label for="requestor">Requestor</label><br>
             <!-- TODO: person picker (search on each keystroke within people.json, match any field, include partials, show first 5 results unsorted)-->
-            <input type="text" name="requestor" id="requestor" required>
+            <input type="text" name="requestor" id="requestor">
         </div>
         <div>
             <label for="goodending">Good ending</label>
@@ -38,15 +36,12 @@
             <p>No spoilers please</p>
         </div>
         <div>
-            <input type="checkbox" name="needstoryteller" id="needstoryteller" required>
+            <input type="checkbox" name="needstoryteller" id="needstoryteller" onclick="storytellerIsNeeded()">
             <label for="needstoryteller">Need storyteller</label>
         </div>
-        <div>
+        <div id="storytellerArea" class="hide">
             <label for="storyteller">Storyteller</label>
-        </div>
-        <div>
-            <!-- TODO: JS: field required & visible when Need storyteller equals true -->
-            <input type="text" name="storyteller" id="storyteller" required>
+            <input type="text" name="storyteller" id="storyteller">
         </div>
         <div>
             <label for="wantedcharacters">Wanted characters</label>
