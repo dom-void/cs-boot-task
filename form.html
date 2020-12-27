@@ -10,165 +10,167 @@
 
 <body>
     <form action="" method="post" onsubmit="return validate(this)">
-        <div id="reqnameArea">
-            <label for="reqname">Request name</label><br>
-            <input type="text" name="reqname" id="reqname" maxlength="255">
-        </div>
-        <div id="requestorArea">
-            <label for="requestor">Requestor</label><br>
-            <!-- TODO: person picker (search on each keystroke within people.json, match any field, include partials, show first 5 results unsorted)-->
-            <input type="text" name="requestor" id="requestor">
-        </div>
-        <div>
-            <label for="goodending">Good ending</label>
-        </div>
-        <div>
-            <input type="radio" name="goodending" id="goodendingy" required>
-            <label for="goodendingy">Yes</label>
-            <input type="radio" name="goodending" id="goodendingdep" checked>
-            <label for="goodendingdep">Depends</label>
-            <input type="radio" name="goodending" id="goodendingn">
-            <label for="goodendingn">No</label>
-        </div>
-        <div id="descriptionArea">
-            <label for="description">Description</label><br>
-            <textarea name="description" id="description" cols="30" rows="10"></textarea>
-            <p>No spoilers please</p>
-        </div>
-        <div>
-            <input type="checkbox" name="needstoryteller" id="needstoryteller" onclick="storytellerIsNeeded()">
-            <label for="needstoryteller">Need storyteller</label>
-        </div>
-        <div id="storytellerArea" class="hide">
-            <label for="storyteller">Storyteller</label>
-            <input type="text" name="storyteller" id="storyteller">
-        </div>
-        <div>
-            <label for="wantedcharacters">Wanted characters</label>
-        </div>
-        <div>
-            <select name="wantedcharacters" id="wantedcharacters" size="5" multiple>
-                <option name="lorem">Lorem</option>
-                <option name="ipsum">ipsum</option>
-                <option name="dolor">dolor</option>
-                <option name="sit">sit</option>
-                <option name="amet">amet</option>
-                <option name="consectetur">consectetur</option>
-                <option name="adipisicing">adipisicing</option>
-                <option name="elit">elit</option>
-                <option name="Sed">Sed</option>
-                <option name="do">do</option>
-                <option name="eiusmod">eiusmod</option>
-                <option name="tempor">tempor</option>
-                <option name="incididunt">incididunt</option>
-                <option name="ut">ut</option>
-                <option name="labore">labore</option>
-                <option name="et">et</option>
-                <option name="dolore">dolore</option>
-                <option name="magna">magna</option>
-                <option name="aliqua">aliqua</option>
-                <option name="Ut">Ut</option>
-                <option name="enim">enim</option>
-                <option name="ad">ad</option>
-                <option name="minim">minim</option>
-                <option name="veniam">veniam</option>
-                <option name="quis">quis</option>
-                <option name="nostrud">nostrud</option>
-                <option name="exercitation">exercitation</option>
-                <option name="ullamco">ullamco</option>
-                <option name="laboris">laboris</option>
-                <option name="nisi">nisi</option>
-                <option name="ut">ut</option>
-                <option name="aliquip">aliquip</option>
-                <option name="ex">ex</option>
-                <option name="ea">ea</option>
-                <option name="commodo">commodo</option>
-                <option name="consequat">consequat</option>
-                <option name="duis">Duis</option>
-                <option name="aute">aute</option>
-                <option name="irure">irure</option>
-                <option name="dolor">dolor</option>
-                <option name="in">in</option>
-                <option name="reprehenderit">reprehenderit</option>
-                <option name="in">in</option>
-                <option name="voluptate">voluptate</option>
-                <option name="velit">velit</option>
-                <option name="esse">esse</option>
-                <option name="cillum">cillum</option>
-                <option name="dolore">dolore</option>
-                <option name="eu">eu</option>
-                <option name="fugiat">fugiat</option>
-                <option name="nulla">nulla</option>
-                <option name="pariatur">pariatur</option>
-                <option name="excepteur">Excepteur</option>
-                <option name="sint">sint</option>
-                <option name="occaecat">occaecat</option>
-                <option name="cupidatat">cupidatat</option>
-                <option name="non">non</option>
-                <option name="proident">proident</option>
-                <option name="sunt">sunt</option>
-                <option name="in">in</option>
-                <option name="culpa">culpa</option>
-                <option name="qui">qui</option>
-                <option name="officia">officia</option>
-                <option name="deserunt">deserunt</option>
-                <option name="mollit">mollit</option>
-                <option name="anim">anim</option>
-                <option name="id">id</option>
-                <option name="est">est</option>
-                <option name="laborum">laborum</option>
-                <option name="sed">Sed</option>
-                <option name="ut">ut</option>
-                <option name="perspiciatis">perspiciatis</option>
-                <option name="unde">unde</option>
-                <option name="omnis">omnis</option>
-                <option name="iste">iste</option>
-                <option name="natus">natus</option>
-                <option name="error">error</option>
-                <option name="sit">sit</option>
-                <option name="voluptatem">voluptatem</option>
-                <option name="accusantium">accusantium</option>
-                <option name="doloremque">doloremque</option>
-                <option name="laudantium">laudantium</option>
-                <option name="totam">totam</option>
-                <option name="rem">rem</option>
-                <option name="aperiam">aperiam</option>
-                <option name="eaque">eaque</option>
-                <option name="ipsa">ipsa</option>
-                <option name="quae">quae</option>
-                <option name="ab">ab</option>
-                <option name="illo">illo</option>
-                <option name="inventore">inventore</option>
-                <option name="veritatis">veritatis</option>
-                <option name="et">et</option>
-                <option name="quasi">quasi</option>
-                <option name="architecto">architecto</option>
-                <option name="beatae">beatae</option>
-                <option name="vitae">vitae</option>
-                <option name="dicta">dicta</option>
-                <option name="del">del</option>
-                <option name="veritas">veritas</option>
-            </select>
-        </div>
-        <div id="deadlineArea">
-            <label for="deadline">Deadline</label>
-            <input type="date" name="deadline" id="deadline">
-            <p>Deadline must be at least one week ahead and on the last day of the year at the latest</p>
-        </div>
-        <div id="budgetArea">
-            <label for="budget">Budget</label><br>
-            <input type="number" name="budget" id="budget">
-            <!-- TODO: JS: description (on focus?) -->
-            <p>In Flable Dollars (FBD), no less than 250000</p>
-        </div>
-        <div>
-            <input type="hidden" name="status" id="status" value="false" disabled>
-        </div>
-        <div>
-            <button onclick="window.location.href='./dashboard.html'">Cancel</button>
-            <button>Save</button>
-            <input type="submit" value="Submit">
-        </div>
+        <fieldset>
+            <div id="reqnameArea">
+                <label for="reqname">Request name</label><br>
+                <input type="text" name="reqname" id="reqname" maxlength="255">
+            </div>
+            <div id="requestorArea">
+                <label for="requestor">Requestor</label><br>
+                <!-- TODO: person picker (search on each keystroke within people.json, match any field, include partials, show first 5 results unsorted)-->
+                <input type="text" name="requestor" id="requestor">
+            </div>
+            <div>
+                <label for="goodending">Good ending</label>
+            </div>
+            <div>
+                <input type="radio" name="goodending" id="goodendingy" required>
+                <label for="goodendingy">Yes</label>
+                <input type="radio" name="goodending" id="goodendingdep" checked>
+                <label for="goodendingdep">Depends</label>
+                <input type="radio" name="goodending" id="goodendingn">
+                <label for="goodendingn">No</label>
+            </div>
+            <div id="descriptionArea">
+                <label for="description">Description</label><br>
+                <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                <p>No spoilers please</p>
+            </div>
+            <div>
+                <input type="checkbox" name="needstoryteller" id="needstoryteller" onclick="storytellerIsNeeded()">
+                <label for="needstoryteller">Need storyteller</label>
+            </div>
+            <div id="storytellerArea" class="hide">
+                <label for="storyteller">Storyteller</label>
+                <input type="text" name="storyteller" id="storyteller">
+            </div>
+            <div>
+                <label for="wantedcharacters">Wanted characters</label>
+            </div>
+            <div>
+                <select name="wantedcharacters" id="wantedcharacters" size="5" multiple>
+                    <option name="lorem">Lorem</option>
+                    <option name="ipsum">ipsum</option>
+                    <option name="dolor">dolor</option>
+                    <option name="sit">sit</option>
+                    <option name="amet">amet</option>
+                    <option name="consectetur">consectetur</option>
+                    <option name="adipisicing">adipisicing</option>
+                    <option name="elit">elit</option>
+                    <option name="Sed">Sed</option>
+                    <option name="do">do</option>
+                    <option name="eiusmod">eiusmod</option>
+                    <option name="tempor">tempor</option>
+                    <option name="incididunt">incididunt</option>
+                    <option name="ut">ut</option>
+                    <option name="labore">labore</option>
+                    <option name="et">et</option>
+                    <option name="dolore">dolore</option>
+                    <option name="magna">magna</option>
+                    <option name="aliqua">aliqua</option>
+                    <option name="Ut">Ut</option>
+                    <option name="enim">enim</option>
+                    <option name="ad">ad</option>
+                    <option name="minim">minim</option>
+                    <option name="veniam">veniam</option>
+                    <option name="quis">quis</option>
+                    <option name="nostrud">nostrud</option>
+                    <option name="exercitation">exercitation</option>
+                    <option name="ullamco">ullamco</option>
+                    <option name="laboris">laboris</option>
+                    <option name="nisi">nisi</option>
+                    <option name="ut">ut</option>
+                    <option name="aliquip">aliquip</option>
+                    <option name="ex">ex</option>
+                    <option name="ea">ea</option>
+                    <option name="commodo">commodo</option>
+                    <option name="consequat">consequat</option>
+                    <option name="duis">Duis</option>
+                    <option name="aute">aute</option>
+                    <option name="irure">irure</option>
+                    <option name="dolor">dolor</option>
+                    <option name="in">in</option>
+                    <option name="reprehenderit">reprehenderit</option>
+                    <option name="in">in</option>
+                    <option name="voluptate">voluptate</option>
+                    <option name="velit">velit</option>
+                    <option name="esse">esse</option>
+                    <option name="cillum">cillum</option>
+                    <option name="dolore">dolore</option>
+                    <option name="eu">eu</option>
+                    <option name="fugiat">fugiat</option>
+                    <option name="nulla">nulla</option>
+                    <option name="pariatur">pariatur</option>
+                    <option name="excepteur">Excepteur</option>
+                    <option name="sint">sint</option>
+                    <option name="occaecat">occaecat</option>
+                    <option name="cupidatat">cupidatat</option>
+                    <option name="non">non</option>
+                    <option name="proident">proident</option>
+                    <option name="sunt">sunt</option>
+                    <option name="in">in</option>
+                    <option name="culpa">culpa</option>
+                    <option name="qui">qui</option>
+                    <option name="officia">officia</option>
+                    <option name="deserunt">deserunt</option>
+                    <option name="mollit">mollit</option>
+                    <option name="anim">anim</option>
+                    <option name="id">id</option>
+                    <option name="est">est</option>
+                    <option name="laborum">laborum</option>
+                    <option name="sed">Sed</option>
+                    <option name="ut">ut</option>
+                    <option name="perspiciatis">perspiciatis</option>
+                    <option name="unde">unde</option>
+                    <option name="omnis">omnis</option>
+                    <option name="iste">iste</option>
+                    <option name="natus">natus</option>
+                    <option name="error">error</option>
+                    <option name="sit">sit</option>
+                    <option name="voluptatem">voluptatem</option>
+                    <option name="accusantium">accusantium</option>
+                    <option name="doloremque">doloremque</option>
+                    <option name="laudantium">laudantium</option>
+                    <option name="totam">totam</option>
+                    <option name="rem">rem</option>
+                    <option name="aperiam">aperiam</option>
+                    <option name="eaque">eaque</option>
+                    <option name="ipsa">ipsa</option>
+                    <option name="quae">quae</option>
+                    <option name="ab">ab</option>
+                    <option name="illo">illo</option>
+                    <option name="inventore">inventore</option>
+                    <option name="veritatis">veritatis</option>
+                    <option name="et">et</option>
+                    <option name="quasi">quasi</option>
+                    <option name="architecto">architecto</option>
+                    <option name="beatae">beatae</option>
+                    <option name="vitae">vitae</option>
+                    <option name="dicta">dicta</option>
+                    <option name="del">del</option>
+                    <option name="veritas">veritas</option>
+                </select>
+            </div>
+            <div id="deadlineArea">
+                <label for="deadline">Deadline</label>
+                <input type="date" name="deadline" id="deadline">
+                <p>Deadline must be at least one week ahead and on the last day of the year at the latest</p>
+            </div>
+            <div id="budgetArea">
+                <label for="budget">Budget</label><br>
+                <input type="number" name="budget" id="budget">
+                <!-- TODO: JS: description (on focus?) -->
+                <p>In Flable Dollars (FBD), no less than 250000</p>
+            </div>
+            <div>
+                <input type="hidden" name="status" id="status" value="false" disabled>
+            </div>
+            <div>
+                <button onclick="window.location.href='./dashboard.html'">Cancel</button>
+                <button>Save</button>
+                <input type="submit" value="Submit">
+            </div>
+        </fieldset>
     </form>
     <script src="script.js"></script>
 </body>

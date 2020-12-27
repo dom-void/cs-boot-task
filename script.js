@@ -44,6 +44,8 @@ function displayFormContent() {
     let minDeadline = nextWeekY + '-' + nextWeekM + '-' + nextWeekD;
     let defDeadline = fourWeeksAheadY + '-' + fourWeeksAheadM + '-' + fourWeeksAheadD;
     let maxDeadline = todayY + '-12-31';
+    
+    let fieldset = document.getElementsByTagName('fieldset')[0];
 
     //FIXME: cleaning – delete logs
     console.log('today is:', todayY + '-' + todayM + '-' + todayD);
@@ -59,8 +61,9 @@ function displayFormContent() {
         console.log('writing values to the form fields');
     } else {
         if (nextWeekY != todayY) {
-            //TODO: disabling form fields
-            //TODO: display info: 'Sorry, it is too late to finish the project this year. Please come back next year. Happy New Year!'
+            let deadlineArea = document.getElementById('deadlineArea');
+            deadlineArea.appendChild(document.createElement('p')).outerHTML = '<p id="deadlineerror" style="color:red;">Sorry, it is too late to finish the project this year. Please come back next year. Happy New Year!</p>';
+            fieldset.setAttribute('disabled', true);
         } else {
             if (fourWeeksAheadY > todayY) {
                 defDeadline = maxDeadline;

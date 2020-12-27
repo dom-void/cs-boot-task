@@ -34,3 +34,12 @@
     - [ ] else fake api query save with Status New,
     - [ ] fake api email query (to: requestor, storyteller, subject: new request, body: Hi, A new request has been created by (Requestor.DisplayName). Cheers, Story Team)
     - [ ] return to dashboard
+
+## Dashboard
+
+- [ ] Load and display all requests, 10 per result page with lazy load
+- [ ] Sort by id, offer sorting by id or name or status or date or budget in both directions
+- [ ] Display all request properties (if value optional and undefined, display blank cell).
+- [ ] Truncate all values to 50 characters, if longer display full value in tooltip (limit tooltip to 500 characters)
+- [ ] Build a search, match partial values in any field
+- [ ] Particular rows should open records in the form page, loading values in the respective fields.

@@ -5,3 +5,7 @@
 .show {
     display: initial;
 }
+
+fieldset {
+    border: none;
+}
