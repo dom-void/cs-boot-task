@@ -28,7 +28,9 @@ displayFormContent();
 function displayFormContent() {
 
     // setting dates for min, default and max in deadline field:
+    //FIXME: bring the date back to 'now' after testing
     let currentDate = Date.now();
+    // let currentDate = Date.UTC(2020, 11, 5);
     let today = new Date(currentDate);
     let todayY = today.getFullYear();
     let todayM = today.getMonth() + 1;
@@ -48,7 +50,7 @@ function displayFormContent() {
     let fieldset = document.getElementsByTagName('fieldset')[0];
 
     //FIXME: cleaning – delete logs
-    console.log('today is:', todayY + '-' + todayM + '-' + todayD);
+    console.log('today is:', todayY + '-' + todayM + '-' + todayD, 'currentDate', currentDate);
     console.log('next week is:', minDeadline);
     console.log('four weeks ahead is:', defDeadline);
 
@@ -61,7 +63,7 @@ function displayFormContent() {
         console.log('writing values to the form fields');
     } else {
         if (nextWeekY != todayY) {
-            let deadlineArea = document.getElementById('deadlineArea');
+            let deadlineArea = document.getElementById('deadline-area');
             deadlineArea.appendChild(document.createElement('p')).outerHTML = '<p id="deadlineerror" style="color:red;">Sorry, it is too late to finish the project this year. Please come back next year. Happy New Year!</p>';
             fieldset.setAttribute('disabled', true);
         } else {
