@@ -1,3 +1,5 @@
+const apiUrl = 'http://localhost:3000/'
+
 const getParams = window.location.search;
 const urlParams = new URLSearchParams(getParams);
 
@@ -23,7 +25,28 @@ console.log('id:', reqID + ';', 'user:', userID);
 
 // const apiURL = "http://localhost:3000/"
 
+loadData('users');
+
 displayFormContent();
+
+function loadData(resource) {
+    let xhr = new XMLHttpRequest();
+
+    xhr.responseType = 'json';
+
+    xhr.addEventListener('load', e => {
+        if (xhr.status === 200) {
+            console.log(xhr.response);
+        }
+    });
+
+    xhr.addEventListener('error', e => {
+        alert('failed connection');
+    });
+
+    xhr.open('GET', apiUrl + resource, true);
+    xhr.send();
+}
 
 function displayFormContent() {
 
