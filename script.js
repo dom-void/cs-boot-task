@@ -43,10 +43,10 @@ function displayFormContent() {
     let fourWeeksAheadY = fourWeeksAhead.getFullYear();
     let fourWeeksAheadM = fourWeeksAhead.getMonth() + 1;
     let fourWeeksAheadD = fourWeeksAhead.getDate();
-    let minDeadline = nextWeekY + '-' + nextWeekM + '-' + nextWeekD;
-    let defDeadline = fourWeeksAheadY + '-' + fourWeeksAheadM + '-' + fourWeeksAheadD;
+    let minDeadline = nextWeekY + '-' + (nextWeekM > 9 ? nextWeekM : '0' + nextWeekM) + '-' + (nextWeekD > 9 ? nextWeekD : '0' + nextWeekD);
+    let defDeadline = fourWeeksAheadY + '-' + (fourWeeksAheadM > 9 ? fourWeeksAheadM : '0' + fourWeeksAheadM) + '-' + (fourWeeksAheadD > 9 ? fourWeeksAheadD : '0' + fourWeeksAheadD);
     let maxDeadline = todayY + '-12-31';
-    
+
     let fieldset = document.getElementsByTagName('fieldset')[0];
 
     //FIXME: cleaning – delete logs
@@ -104,7 +104,7 @@ function validate(form) {
 
     if (!form.reqname.value) {
         errorInfo = document.getElementById('reqnameerror');
-        if(errorInfo) {
+        if (errorInfo) {
             errorInfo.remove();
         }
         document.getElementById('reqnameArea').appendChild(document.createElement('p')).outerHTML = '<p id="reqnameerror" style="color:red;">Please add a name for the request</p>';
@@ -113,7 +113,7 @@ function validate(form) {
 
     if (form.reqname.value.length >= 255) {
         errorInfo = document.getElementById('reqnameerror');
-        if(errorInfo) {
+        if (errorInfo) {
             errorInfo.remove();
         }
         document.getElementById('reqnameArea').appendChild(document.createElement('p')).outerHTML = '<p id="reqnameerror" style="color:red;">Cannot be longer than 255 characters</p>';
@@ -122,7 +122,7 @@ function validate(form) {
 
     if (!form.requestor.value) {
         errorInfo = document.getElementById('requestorerror');
-        if(errorInfo) {
+        if (errorInfo) {
             errorInfo.remove();
         }
         document.getElementById('requestorArea').appendChild(document.createElement('p')).outerHTML = '<p id="requestorerror" style="color:red;">Please choose a requestor</p>'
@@ -131,7 +131,7 @@ function validate(form) {
 
     if (form.description.value.length <= 250) {
         errorInfo = document.getElementById('descriptionerror');
-        if(errorInfo) {
+        if (errorInfo) {
             errorInfo.remove();
         }
         let charactersLeft = 250 - form.description.value.length;
@@ -143,7 +143,7 @@ function validate(form) {
 
     if (storytellerVisible.className == 'show' && !form.storyteller.value) {
         errorInfo = document.getElementById('storytellererror');
-        if(errorInfo) {
+        if (errorInfo) {
             errorInfo.remove();
         }
         document.getElementById('storytellerArea').appendChild(document.createElement('p')).outerHTML = '<p id="storytellererror" style="color:red;">Please choose your storyteller</p>';
@@ -152,7 +152,7 @@ function validate(form) {
 
     if (form.budget.value <= 250000) {
         errorInfo = document.getElementById('budgeterror');
-        if(errorInfo) {
+        if (errorInfo) {
             errorInfo.remove();
         }
         document.getElementById('budgetArea').appendChild(document.createElement('p')).outerHTML = '<p id="budgeterror" style="color:red;">Minimum amount of budget is 250 000 FBD</p>';
