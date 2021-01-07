@@ -3,6 +3,13 @@ const apiUrl = 'http://localhost:3000/'
 const getParams = window.location.search;
 const urlParams = new URLSearchParams(getParams);
 
+const users = loadData('users');
+const requests = loadData('requests');
+
+//FIXME: cleaning – delete logs below
+console.log(users);
+console.log(requests);
+
 let reqID = null;
 let userID = null;
 //TODO: reading activeUser from cookies
@@ -24,8 +31,6 @@ console.log('id:', reqID + ';', 'user:', userID);
 //TODO: if userID is owner, anable all the fields (change styling)
 
 // const apiURL = "http://localhost:3000/"
-
-loadData('users');
 
 displayFormContent();
 
