@@ -3,12 +3,11 @@ const apiUrl = 'http://localhost:3000/'
 const getParams = window.location.search;
 const urlParams = new URLSearchParams(getParams);
 
-const users = loadData('users');
-const requests = loadData('requests');
-
-//FIXME: cleaning – delete logs below
-console.log(users);
-console.log(requests);
+loadData('users', res => {
+    const users = res;
+    console.log(users);
+});
+// loadData('requests');
 
 let reqID = null;
 let userID = null;
@@ -28,20 +27,20 @@ if (urlParams.has('user')) {
 console.log('id:', reqID + ';', 'user:', userID);
 
 //TODO: get data for reqID from json, disable all fields (change styling), fill all the fields with data
-//TODO: if userID is owner, anable all the fields (change styling)
+//TODO: if userID is owner, enable all the fields (change styling)
 
 // const apiURL = "http://localhost:3000/"
 
 displayFormContent();
 
-function loadData(resource) {
+function loadData(resource, cb) {
     let xhr = new XMLHttpRequest();
 
     xhr.responseType = 'json';
 
     xhr.addEventListener('load', e => {
         if (xhr.status === 200) {
-            console.log(xhr.response);
+            cb(xhr.response);
         }
     });
 
